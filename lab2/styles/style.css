@@ -1,0 +1,95 @@
+body {
+    background-color: burlywood;
+    background-image: url('img/deepSpace.png');
+    background-repeat: stretch;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* the Game Instructions header is styled with a glowing effect to make it stand out against the background */
+h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    
+}
+
+/* UX - paragraphs are styled with a subtle glow to enhance readability against the background image */
+p {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* UX - the input and button elements padded with a golden round border */
+input, button {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 2px solid #FFD700;
+}
+
+/* UX - the plain white background of the input field makes it easy for the user to see */
+input {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    margin-right: 10px;
+    /*the next line will center the input field */
+    display: block;
+    margin: 0 auto;
+}
+
+/* UX - Golden button with a hover effect for a more interactive and visually appealing experience */
+button {
+    background-color: #FFD700;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    /*the next line will center the button */
+    display: block;
+    margin: 20px auto;
+}
+
+/* UX - the hover effect. note the scale transform (1.05) and slightly darker gold color (FFA500) for effect */
+button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* UX - the footer is centered, small and styled with a subtle glow to make it visible without overpowering the main content */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    margin-top: 30px;
+}
+
+.footer-logo {
+    width: 175px;
+    margin-top: 10px;
+}
+/* UX - The users guess is instantly provided as feedback with a satisfying glow */
+#guessResult {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin-top: 15px;
+}
+
+/* UX - The output element glows with a shadow effect */
+#outputElement {
+    display: block;
+    color: #FFD700;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+
