@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<!-- This section is boiler template stuff -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guess the Number!</title>
 
+<!-- Link to the CSS file for styling -->    
+</head>
+    <link rel="stylesheet" href="styles/style.css">
 
 </head>
-<body>
+<body style="background-color: burlywood;">
 
-    <input id ="guessInput" placeholder="enter your guess">
+    <!-- Game Instructions for user-->
+    <h1>Guess the Number Game</h1>
+    <p>I'm thinking of a number between 1 and 100. </p><br>
+    <p><i>What is the number?</i></p>
+
+    <input id="guessInput" placeholder="enter your guess">
     <button id="guessButton">Submit Guess</button>
     <p id="guessResult"></p>
+
+    <p id="userGuesses"></p>
+    <output id="outputElement"></output>
 
     <!-- Remember that the script will run after the code above --> 
     <script src="scripts/script.js"></script>
