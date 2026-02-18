@@ -5,6 +5,7 @@ let correctNumber = 13;
 let correctMessage = "Correct!";
 let incorrectMessage = "Incorrect. Enter a number. Try again!";
 let userGuesses = []; // this is an array to store all the user guesses.
+let attemptsLeft = 7; // number of attempts allowed
 
 // the next 3 lines of code are used to select the input element, button element, and result display element from the HTML document using their respective IDs. These variables will be used later to get the user's guess, handle button clicks, and display the result of the guess.
 
@@ -16,33 +17,46 @@ let guessResult = document.querySelector("#guessResult");
 let outputElement = document.querySelector("#outputElement"); // this selects the output element to display the list of guesses
 
 guessButton.addEventListener("click", function displayWinMessage() {
-    userGuesses.push(guessInput.value); // this line adds the user's guess to the userGuesses array using the push method.
-    console.log(userGuesses); // this line logs the userGuesses array to the console, allowing you to see all the guesses made by the user.
-    
-    // Check if input is a valid number
-    if (isNaN(guessInput.value) || guessInput.value === "") {
-        guessResult.textContent = incorrectMessage; 
+    // Read and normalize the guess
+    let inputValue = guessInput.value;
+    let guess = Number(inputValue);
+
+    // Validate input first (don't consume an attempt on invalid input)
+    if (inputValue === "" || isNaN(guess)) {
+        guessResult.textContent = incorrectMessage;
         guessResult.style.color = "red";
+    } else {
+        // record the guess and consume an attempt
+        userGuesses.push(inputValue);
+        attemptsLeft--;
+
+        // Correct guess (win)
+        if (guess === correctNumber) {
+            guessResult.textContent = correctMessage;
+            guessResult.style.color = "green";
+            guessButton.disabled = true;
+        }
+        // No attempts left -> lost
+        else if (attemptsLeft <= 0) {
+            guessResult.textContent = "You Lost";
+            guessResult.style.color = "red";
+            guessButton.disabled = true;
+        }
+        // Guess too high
+        else if (guess > correctNumber) {
+            guessResult.textContent = "Too high! Try again.";
+            guessResult.style.color = "orange";
+        }
+        // Guess too low
+        else {
+            guessResult.textContent = "Too low! Try again.";
+            guessResult.style.color = "orange";
+        }
     }
-    // Check if guess is correct
-    else if (correctNumber == guessInput.value) {
-        guessResult.textContent = correctMessage;
-        guessResult.style.color = "green";
-    }
-    // Check if guess is too high
-    else if (guessInput.value > correctNumber) {
-        guessResult.textContent = "Too high! Try again.";
-        guessResult.style.color = "orange";
-    }
-    // Check if guess is too low
-    else if (guessInput.value < correctNumber) {
-        guessResult.textContent = "Too low! Try again.";
-        guessResult.style.color = "orange";
-    }
-    
-    // Display all user guesses below the result message
-    outputElement.textContent = "Your guesses: " + userGuesses.join(", ");
-}); // note right here we add a ")" to close the encapsulated function that we created for the event listener.
+
+    // Display all user guesses and attempts left
+    outputElement.textContent = "Your guesses: " + userGuesses.join(", ") + " | Attempts left: " + attemptsLeft;
+});
 
 
 

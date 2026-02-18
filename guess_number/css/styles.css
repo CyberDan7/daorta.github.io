@@ -1,0 +1,87 @@
+header {
+    font-size: 75px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 10px auto;
+    background-color: darkorange;
+}
+
+button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+body{
+    background-image: url("../img/tron.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: grey;
+    margin: 20px auto;
+    width: 80%;
+}
+/* UX - the footer is centered, small and styled with a subtle glow to make it visible without overpowering the main content */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: rgb(255, 255, 255, 0.08);
+    padding: 5px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    margin-top: 30px;
+  
+}
+
+.footer-logo {
+    width: 175px;
+    margin-top: 10px;
+}
+
+#instructions {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+#main {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+#feedback {
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1.9);
+}
